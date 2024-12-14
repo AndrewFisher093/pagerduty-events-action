@@ -1,0 +1,22 @@
+{
+  "name": "pagerduty-events-action",
+  "description": "GitHub Actions to send PagerDuty alerts",
+  "author": "Andrew Rybak",
+  "type": "module",
+  "version": "0.0.1",
+  "keywords": [
+    "actions",
+    "node",
+    "pagerduty"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@types/node": "^22.10.1",
+    "got": "^14.4.5",
+    "ts-node": "^10.9.2"
+  }
+}
