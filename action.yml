@@ -1,0 +1,55 @@
+name: 'PagerDuty Events Action'
+description: 'GitHub Actions to send PagerDuty alerts'
+author: 'Andrew Rybak'
+
+branding:
+  icon: 'cloud-lightning'
+  color: 'purple'
+
+inputs:
+  inputs:
+    routing_key:
+      description: 'PagerDuty integration/routing key'
+      required: true
+    dedup_key:
+      description: 'Deduplication key of the event'
+      required: false
+    event_action:
+      description: 'PagerDuty event action'
+      required: true
+      default: 'trigger'
+    summary:
+      description: 'Summary of the event'
+      required: true
+    source:
+      description: 'Source of the event'
+      required: true
+    severity:
+      description: 'Severity of the event'
+      required: true
+      default: 'error'
+    timestamp:
+      description: 'Timestamp of the event'
+      required: false
+    component:
+      description: 'Component of the event'
+      required: false
+    group:
+      description: 'Group of the event'
+      required: false
+    class:
+      description: 'Class of the event'
+      required: false
+    custom_details:
+      description: 'Custom details of the event'
+      required: false
+
+outputs:
+  status_code:
+    description: 'Status code of the PagerDuty alert event'
+  dedup_key:
+    description: 'Deduplication key of the PagerDuty alert event'
+
+runs:
+  using: node20
+  main: dist/index.js
